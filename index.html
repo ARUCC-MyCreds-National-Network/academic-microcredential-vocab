@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Academic Microcredential v0.1</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <!--
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+    <script
+      src="https://www.w3.org/Tools/respec/respec-w3c"
+      class="remove"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./common.js" class="remove"></script>
+    <script type="text/javascript" class="remove">
+      var respecConfig = {
+        // specification status (e.g., WD, LCWD, NOTE, etc.). If in doubt use ED.
+        specStatus: "unofficial",
+
+        // the specification's short name, as in http://www.w3.org/TR/short-name/
+        shortName: "academic-award-vocab",
+        //group: "vc",
+
+        // subtitle for the spec
+        subtitle:
+          "A Linked Data vocabulary for expressing attributes related to an academic award vocabulary",
+
+        // if you wish the publication date to be other than today, set this
+        //publishDate: "2019-03-26",
+        //crEnd: "2019-04-23",
+        //implementationReportURI: "https://w3c.github.io/",
+
+        // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+        // and its maturity status
+        // previousPublishDate:  "1977-03-15",
+        // previousMaturity:  "WD",
+
+        // extend the bibliography entries
+        doJsonLd: true,
+
+        github: "https://github.com/ARUCC-MyCreds-National-Network/academic-microcredential-vocab",
+        includePermalinks: false,
+
+        // if there a publicly available Editor's Draft, this is the link
+        edDraftURI: "https://academic-microcredential-vocab.mattrlabs.com",
+        latestVersion: "https://academic-microcredential-vocab.mattrlabs.com",
+
+        // if this is a LCWD, uncomment and set the end of its review period
+        // lcEnd: "2009-08-05",
+
+        // editors, add as many as you like
+        // only "name" is required
+        editors: [
+          {
+            name: "Preet Patel",
+            url: "https://github.com/preetpatel",
+            company: "MATTR",
+            companyURL: "https://mattr.global/",
+            w3cid: 128201
+          },
+           {
+            name: "Kashif Iqbal",
+            url: "",
+            company: "MATTR",
+            companyURL: "https://mattr.global/",
+          },
+          {
+            name: "Tobias Looker",
+            url: "https://github.com/tplooker",
+            company: "MATTR",
+            companyURL: "https://mattr.global/",
+          },
+        ],
+        // authors, add as many as you like.
+        // This is optional, uncomment if you have authors as well as editors.
+        // only "name" is required. Same format as editors.
+        // name of the WG
+        //wg: "Credentials Community Group",
+
+        // URI of the public WG page
+        //wgURI: "https://www.w3.org/community/credentials/",
+
+        // name (with the @w3c.org) of the public mailing to which comments are due
+        //wgPublicList: "public-credentials",
+
+        // URI of the patent status for this WG, for Rec-track documents
+        // !!!! IMPORTANT !!!!
+        // This is important for Rec-track documents, do not copy a patent URI from a random
+        // document unless you know what you're doing. If in doubt ask your friendly neighborhood
+        // Team Contact.
+        //wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/98922/status",
+        maxTocLevel: 2,
+        inlineCSS: true,
+      };
+    </script>
+    <style>
+      pre .highlight {
+        font-weight: bold;
+        color: green;
+      }
+      pre .comment {
+        font-weight: bold;
+        color: Gray;
+      }
+      .color-text {
+        font-weight: bold;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="abstract">
+      <p>
+        I need something to go here
+      </p>
+    </section>
+
+    <section id="sotd">
+      <p>
+Comments regarding all aspects of this document are welcome.
+Please file issues
+directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-microcredential-vocab/issues/">GitHub</a>
+</p
+    </section>
+
+    <section class="informative">
+      <h2>Introduction</h2>
+
+      <p>
+        This specification describes a Linked Data vocabulary for asserting
+        Verifiable Credentials related to an academic Microcredential award. This vocabulary is intended to be used in conjunction with the Verifiable Credentials Data Model 1.0 [[?VC-DATA-MODEL]] specification.
+      </p>
+
+      <section class="informative">
+        <h3>Use Cases and Requirements</h3>
+
+        <p>
+          The following use cases outline a number of key scenarios that readers
+          might find useful:
+        </p>
+
+        <ul>
+          <li>Permanent Residency Card</li>
+        </ul>
+      </section>
+
+      <section class="informative">
+        <h3>Example</h3>
+
+        <p>
+          The following example is provided as a simple example of when this
+          vocabulary is useful:
+        </p>
+
+        <pre class="example">
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        {
+            "@vocab": "https://w3id.org/security/undefinedTerm#"
+        },
+        "https://schema.org",
+        "https://mattr.global/contexts/vc-extensions/v1"
+    ],
+    "type": [
+        "VerifiableCredential",
+        "AcademicAward",
+        "VerifiableCredentialExtension"
+    ],
+    "issuer": {
+        "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
+        "name": "Sample University of Auckland"
+    },
+    "name": "Academic Award",
+    "description": "An academic certificate issued by a College or University",
+    "issuanceDate": "2022-10-06T01:22:35.119Z",
+    "credentialSubject": {
+        "id": "did:key:z6MkuGy57ZKCiU7jkvLS9gwZvtpnaQxAytrjBJm5onwgCDem",
+        "givenName": "Kashif",
+        "familyName": "Iqbal",
+        "birthDate": "1988-01-01",
+        "email": "Kashif.Iqbal.Sample1@gmail.co.nz",
+        "awardDetails": {
+            "awardId": "MC_198211203_321109",
+            "awardTitle": "Social Network Modelling",
+            "awardType": "MICROCREDENTIAL",
+            "awardDescription": "Social Network Modelling",
+            "honours": "",
+            "studyArea": "Computer Program Data Models",
+            "dateAwarded": "2022-09-08",
+            "dateIssued": "2022-09-08"
+        },
+        "educationalOrganization": {
+            "name": "Sample University of Auckland",
+            "url": "https://SUOA.nz/",
+            "identifier": "SUOA12345",
+            "countryCode": "NZ"
+        },
+        "persist": false,
+        "revocable": true
+    },
+    "proof": {
+        "type": "Ed25519Signature2018",
+        "created": "2022-10-06T01:22:35Z",
+        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..I9EzNz9lrBPASSzcijYyAK4VBRvzJq62zEZkWHA0ixQpgPuEeEJedn4UcaEn8wFPTO3ZoiH-kGzMJoPiYBj3BQ",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN"
+    }
+}
+        </pre>
+      </section>
+    </section>
+
+    <section class="informative">
+      <h2>Terminology</h2>
+
+      <div
+        data-include="./terms.html"
+        data-oninclude="restrictReferences"
+      ></div>
+    </section>
+
+    <section class="normative">
+      <h2>The Academic Microcredential Award Vocabulary</h2>
+
+      <p>
+        This vocabulary assumes all terms specified in the base Verifiable
+        Credentials [[VC-DATA-MODEL]] context. In addition, the following
+        classes are available for specifying information related to a microcredential award.
+      </p>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AcademicAward</td>
+            <td>
+              Specifies that the credential is a microcredential award.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+         This document also specifies the following terms for expressing a microcredential award:
+      </p>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>givenName</td>
+            <td>
+              The given name of the person who was awarded the microcredential.
+            </td>
+          </tr>
+          <tr>
+            <td>familyName</td>
+            <td>
+              The family name of the person who was awarded the microcredential.
+            </td>
+          </tr>
+          <tr>
+            <td>birthDate</td>
+            <td>The date on which a individual was born.</td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td>
+              The email address of the recepient of the microcredential.
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+         The credential contains the following terms to express the award Details about the issued microcredential:
+      </p>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>awardId</td>
+            <td>
+              The unique identifier of the microcredential award.
+            </td>
+          </tr>
+          <tr>
+            <td>awardTitle</td>
+            <td>
+              The name of the microcredential award.
+            </td>
+          </tr>
+          <tr>
+            <td>awardType</td>
+            <td>
+              The type of microcredential award.
+            </td>
+          </tr>
+          <tr>
+            <td>awardDescription</td>
+            <td>
+              A description of the microcredential award.
+            </td>
+          </tr>
+          <tr>
+            <td>honours</td>
+            <td>
+              The honours associated with the microcredential award.
+            </td>
+          </tr>
+          <tr>
+            <td>studyArea</td>
+            <td>
+              The study area associated with the microcredential award.
+            </td>
+          </tr>
+          <tr>
+            <td>dateAwarded</td>
+            <td>
+              The date on which the microcredential was awarded.
+            </td>
+          </tr>
+          <tr>
+            <td>dateIssued</td>
+            <td>
+              The date on which the microcredential was issued.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+       <p>
+         The credential also contains the following terms to express the educational organization that issued the microcredential:
+      </p>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>name</td>
+            <td>
+              The name of the educational organization.
+            </td>
+          </tr>
+          <tr>
+            <td>url</td>
+            <td>
+              The URL of the educational organization.
+            </td>
+          </tr>
+          <tr>
+            <td>identifier</td>
+            <td>
+              The identifier of the educational organization.
+            </td>
+          </tr>
+          <tr>
+            <td>countryCode</td>
+            <td>
+              The country code of the educational organization.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <section class="normative">
+        <h3>givenName</h3>
+
+        <p>
+          The given name of the person who was awarded the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>givenName</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#givenName</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>familyName</h3>
+
+        <p>
+          The family name of the person who was awarded the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>familyName</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#familyName</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>birthDate</h3>
+
+        <p>
+          The date on which a individual was born.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>birthDate</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#birthDate</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>email</h3>
+
+        <p>
+          The email address of the recepient of the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>email</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#email</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>awardId</h3>
+
+        <p>
+          The unique identifier of the microcredential award.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>awardId</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardId</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>awardTitle</h3>
+
+        <p>
+          The name of the microcredential award.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>awardTitle</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardTitle</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>awardDescription</h3>
+
+        <p>
+          The description of the microcredential award.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>awardDescription</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardDescription</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>awardDate</h3>
+
+        <p>
+          The date on which the microcredential was awarded.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>awardDate</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardDate</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>honours</h3>
+
+        <p>
+          The honours associated with the microcredential award.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>honours</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#honours</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="normative">
+        <h3>studyArea</h3>
+
+        <p>
+          The study area associated with the microcredential award.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>studyArea</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#studyArea</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="informative">
+        <h3>dateAwarded</h3>
+
+        <p>
+          The date on which the microcredential was awarded.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>dateAwarded</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#dateAwarded</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="informative">
+        <h3>dateIssued</h3>
+
+        <p>
+          The date on which the microcredential was issued.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>dateIssued</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#dateIssued</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="informative">
+        <h3>educationalOrganization</h3>
+
+        <p>
+          The educational organization that issued the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>educationalOrganization</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#educationalOrganization</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>object</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="informative">
+        <h3>name</h3>
+
+        <p>
+          The name of the educational organization that issued the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>name</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://schema.org/name</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="informative">
+        <h3>url</h3>
+
+        <p>
+          The URL of the educational organization that issued the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>url</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://schema.org/url</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="informative">
+        <h3>identifier</h3>
+
+        <p>
+          The identifier of the educational organization that issued the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>identifier</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://schema.org/identifier</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="informative">
+        <h3>countryCode</h3>
+
+        <p>
+          The country code of the educational organization that issued the microcredential.
+        </p>
+
+        <table class="simple">
+          <tbody>
+            <tr>
+              <td>Term</td>
+              <td>countryCode</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>https://academic-microcredential-vocab.mattrlabs.com/#countryCode</td>
+            </tr>
+            <tr>
+              <td>Expected Value</td>
+              <td>string</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    <section class="informative">
+      <h2>Privacy Considerations</h2>
+
+      <p>
+        This section details the general privacy considerations and specific
+        privacy implications of deploying this specification into production
+        environments.
+      </p>
+    </section>
+
+    <section class="informative">
+      <h2>Security Considerations</h2>
+
+      <p>
+        There are a number of security considerations that implementers should
+        be aware of when processing data described by this specification.
+        Ignoring or not understanding the implications of this section can
+        result in security vulnerabilities.
+      </p>
+
+      <p>
+        While this section attempts to highlight a broad set of security
+        considerations, it is not a complete list. Implementers are urged to
+        seek the advice of security and cryptography professionals when
+        implementing mission critical systems using the technology outlined in
+        this specification.
+      </p>
+    </section>
+
+    <section class="informative">
+      <h2>Accessibility Considerations</h2>
+
+      <p>
+        There are a number of accessibility considerations implementers should
+        be aware of when processing data described in this specification. As
+        with any web standards or protocols implementation, ignoring
+        accessibility issues makes this information unusable to a large subset
+        of the population. It is important to follow accessibility guidelines
+        and standards, such as [[WCAG21]], to ensure all people, regardless of
+        ability, can make use of this data. This is especially important when
+        establishing systems utilizing cryptography, which have historically
+        created problems for assistive technologies.
+      </p>
+
+      <p>
+        This section details the general accessibility considerations to take
+        into account when utilizing this data model.
+      </p>
+    </section>
+
+    <section class="informative">
+      <h2>Internationalization Considerations</h2>
+
+      <p>
+        There are a number of internationalization considerations implementers
+        should be aware of when publishing data described in this specification.
+        As with any web standards or protocols implementation, ignoring
+        internationalization makes it difficult for data to be produced and
+        consumed across a disparate set of languages and societies, which would
+        limit the applicability of the specification and significantly diminish
+        its value as a standard.
+      </p>
+
+      <p>
+        This section outlines general internationalization considerations to
+        take into account when utilizing this data model.
+      </p>
+    </section>
+  </body>
+</html>
