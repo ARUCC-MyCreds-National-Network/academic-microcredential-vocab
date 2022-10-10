@@ -119,8 +119,8 @@
       <p>
         This specification document refers to the standards, patterns and examples used for the Verifiable Credential issuance and verification of the educational records requested by a post-secondary institution in Canada. 
         These credentials are issued based on the JSON-LD format as defined by W3C which are cryptographically signed and provide a proof of authenticity. Credentials are issued through a platform (i.e. MyCreds<sup>TM</sup>) and
-        verified by various industry partners to enable different services for the students or learners in Canada. This specification provides some reference material in the form of examples and the code samples 
-        to help the developers community in creating the academic credentials.  
+        verified by various industry partners to enable different services for the students or learners in Canada. This specification provides some reference material, the vocabulary used and the code samples 
+        to help the developers community in utilizing the academic credentials.  
       </p>
     </section>
 
@@ -137,13 +137,16 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
 
       <p>
         This specification describes a Linked Data vocabulary for asserting
-        Verifiable Credentials related to an academic Microcredential award. This vocabulary is intended to be used in conjunction with the Verifiable Credentials Data Model 1.0 [[?VC-DATA-MODEL]] specification.
+        Verifiable Credentials related to an academic Micro-credential . This vocabulary is intended to be used in conjunction with the Verifiable Credentials Data Model 1.0 [[?VC-DATA-MODEL]] specification.
       </p>
 
       <section class="informative">
         <h3>Use Cases and Requirements</h3>
 
         <p>
+          There are various use cases that might be helpful for the readers in understating the MyCreds<sup>TM</sup> credential ecosystem. Existing use case covers the JSON-LD format and a basic pattern in issuing and verifying the micro-credentials of an academic record. 
+          The university or college accesses the MyCreds<sup>TM</sup> platform and request to issue a Verifiable Credential to the student or learner. The claim of this credential holds the information related to academic certificate, credential owner details and the institution issuing these Credentials. 
+          
           The following use cases outline a number of key scenarios that readers
           might find useful:
         </p>
@@ -177,36 +180,40 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         "VerifiableCredentialExtension"
     ],
     "issuer": {
-        "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
-        "name": "Sample University of Auckland"
-    },
+      "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
+      "name": "Sample University of Auckland"
+  },
     "name": "Academic Award",
-    "description": "An academic certificate issued by a College or University",
-    "issuanceDate": "2022-10-06T01:22:35.119Z",
-    "credentialSubject": {
-        "id": "did:key:z6MkuGy57ZKCiU7jkvLS9gwZvtpnaQxAytrjBJm5onwgCDem",
-        "givenName": "Kashif",
-        "familyName": "Iqbal",
+    "description": "An academic certificate",
+    "issuanceDate": "2022-10-06T08:46:14.843Z",
+      "credentialSubject": {
+        "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
+        "givenName": "John",
+        "familyName": "Smith",
         "birthDate": "1988-01-01",
-        "email": "Kashif.Iqbal.Sample1@gmail.co.nz",
+        "email": "John.Smith.1@gmail.com",
         "awardDetails": {
-            "awardId": "MC_198211203_321109",
-            "awardTitle": "Social Network Modelling",
-            "awardType": "MICROCREDENTIAL",
-            "awardDescription": "Social Network Modelling",
-            "honours": "",
-            "studyArea": "Computer Program Data Models",
-            "dateAwarded": "2022-09-08",
-            "dateIssued": "2022-09-08"
-        },
-        "educationalOrganization": {
-            "name": "Sample University of Auckland",
-            "url": "https://SUOA.nz/",
-            "identifier": "SUOA12345",
-            "countryCode": "NZ"
-        },
-        "persist": false,
-        "revocable": true
+          "awardId": "MC_198211203_321109",
+          "awardTitle": "Social Network Modelling",
+          "awardType": "MICROCREDENTIAL",
+          "awardDescription": "Social Network Modelling",
+          "honours": "",
+          "studyArea": "Computer Program Data Models",
+          "dateAwarded": "2022-09-08",
+          "dateIssued": "2022-09-08"
+      },
+      "educationalOrganization": {
+          "name": "Sample University of Auckland",
+          "url": "https://SUOA.nz/",
+          "identifier": "SUOA12345",
+          "countryCode": "NZ"
+      }
+  },
+    "credentialStatus": {
+      "id": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/472b3f69-36ea-4444-b11f-18382459073f#1",
+      "type": "RevocationList2020Status",
+      "revocationListIndex": "1",
+      "revocationListCredential": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/472b3f69-36ea-4444-b11f-18382459073f"
     },
     "proof": {
         "type": "Ed25519Signature2018",
