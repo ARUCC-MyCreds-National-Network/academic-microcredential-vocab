@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Academic Microcredential v0.1</title>
+    <title>Academic micro-credential v0.1</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <!--
       === NOTA BENE ===
@@ -146,6 +146,12 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <p>
           There are various use cases that might be helpful for the readers in understating the MyCreds<sup>TM</sup> credential ecosystem. Existing use case covers the JSON-LD format and a basic pattern in issuing and verifying the micro-credentials of an academic record. 
           The university or college accesses the MyCreds<sup>TM</sup> platform and request to issue a Verifiable Credential to the student or learner. The claim of this credential holds the information related to academic certificate, credential owner details and the institution issuing these Credentials. 
+
+          The use case requirements should be able to cover the the following. 
+          - Common definitions or characteristics of the academic credential ecosystem
+          - Roles involved in the academic credential ecosystem 
+          - Common tasks performed by these Roles
+          - Common patterns and mechanics of interactions 
           
           The following use cases outline a number of key scenarios that readers
           might find useful:
@@ -160,7 +166,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>Example</h3>
 
         <p>
-          The following example is provided as a simple example of when this
+          The following example is provided as a simple reference of when this
           vocabulary is useful:
         </p>
 
@@ -195,7 +201,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         "awardDetails": {
           "awardId": "MC_198211203_321109",
           "awardTitle": "Social Network Modelling",
-          "awardType": "MICROCREDENTIAL",
+          "awardType": "MICRO-CREDENTIAL",
           "awardDescription": "Social Network Modelling",
           "honours": "",
           "studyArea": "Computer Program Data Models",
@@ -237,12 +243,12 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
     </section>
 
     <section class="normative">
-      <h2>The Academic Microcredential Award Vocabulary</h2>
+      <h2>The Academic Micro-credential Award Vocabulary</h2>
 
       <p>
         This vocabulary assumes all terms specified in the base Verifiable
         Credentials [[VC-DATA-MODEL]] context. In addition, the following
-        classes are available for specifying information related to a microcredential award.
+        classes are available for specifying information related to a micro-credential award.
       </p>
 
       <table class="simple">
@@ -256,14 +262,14 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           <tr>
             <td>AcademicAward</td>
             <td>
-              Specifies that the credential is a microcredential award.
+              Specifies that the credential is a micro-credential award.
             </td>
           </tr>
         </tbody>
       </table>
 
       <p>
-         This document also specifies the following terms for expressing a microcredential award:
+         This document also specifies the following terms for expressing a micro-credential award:
       </p>
 
       <table class="simple">
@@ -277,13 +283,13 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           <tr>
             <td>givenName</td>
             <td>
-              The given name of the person who was awarded the microcredential.
+              The given name of the person who was awarded the micro-credential.
             </td>
           </tr>
           <tr>
             <td>familyName</td>
             <td>
-              The family name of the person who was awarded the microcredential.
+              The family name of the person who was awarded the micro-credential.
             </td>
           </tr>
           <tr>
@@ -293,13 +299,13 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           <tr>
             <td>email</td>
             <td>
-              The email address of the recepient of the microcredential.
+              The email address of the recipient of the micro-credential.
           </tr>
         </tbody>
       </table>
 
       <p>
-         The credential contains the following terms to express the award Details about the issued microcredential:
+         The credential contains the following terms to express the award Details about the issued micro-credential:
       </p>
 
       <table class="simple">
@@ -313,56 +319,56 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           <tr>
             <td>awardId</td>
             <td>
-              The unique identifier of the microcredential award.
+              The unique identifier of the micro-credential award.
             </td>
           </tr>
           <tr>
             <td>awardTitle</td>
             <td>
-              The name of the microcredential award.
+              The name of the micro-credential award.
             </td>
           </tr>
           <tr>
             <td>awardType</td>
             <td>
-              The type of microcredential award.
+              The type of micro-credential award.
             </td>
           </tr>
           <tr>
             <td>awardDescription</td>
             <td>
-              A description of the microcredential award.
+              A description of the micro-credential award.
             </td>
           </tr>
           <tr>
             <td>honours</td>
             <td>
-              The honours associated with the microcredential award.
+              The honours associated with the micro-credential award.
             </td>
           </tr>
           <tr>
             <td>studyArea</td>
             <td>
-              The study area associated with the microcredential award.
+              The study area associated with the micro-credential award.
             </td>
           </tr>
           <tr>
             <td>dateAwarded</td>
             <td>
-              The date on which the microcredential was awarded.
+              The date on which the micro-credential was awarded.
             </td>
           </tr>
           <tr>
             <td>dateIssued</td>
             <td>
-              The date on which the microcredential was issued.
+              The date on which the micro-credential was issued.
             </td>
           </tr>
         </tbody>
       </table>
 
        <p>
-         The credential also contains the following terms to express the educational organization that issued the microcredential:
+         The credential also contains the following terms to express the educational organization that issued the micro-credential:
       </p>
 
       <table class="simple">
@@ -405,7 +411,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>givenName</h3>
 
         <p>
-          The given name of the person who was awarded the microcredential.
+          The given name of the person who was awarded the micro-credential.
         </p>
 
         <table class="simple">
@@ -416,7 +422,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#givenName</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#givenName</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -430,7 +436,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>familyName</h3>
 
         <p>
-          The family name of the person who was awarded the microcredential.
+          The family name of the person who was awarded the micro-credential.
         </p>
 
         <table class="simple">
@@ -441,7 +447,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#familyName</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#familyName</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -466,7 +472,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#birthDate</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#birthDate</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -480,7 +486,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>email</h3>
 
         <p>
-          The email address of the recepient of the microcredential.
+          The email address of the recepient of the micro-credential.
         </p>
 
         <table class="simple">
@@ -491,7 +497,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#email</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#email</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -505,7 +511,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>awardId</h3>
 
         <p>
-          The unique identifier of the microcredential award.
+          The unique identifier of the micro-credential award.
         </p>
 
         <table class="simple">
@@ -516,7 +522,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardId</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#awardId</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -530,7 +536,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>awardTitle</h3>
 
         <p>
-          The name of the microcredential award.
+          The name of the micro-credential award.
         </p>
 
         <table class="simple">
@@ -541,7 +547,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardTitle</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#awardTitle</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -555,7 +561,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>awardDescription</h3>
 
         <p>
-          The description of the microcredential award.
+          The description of the micro-credential award.
         </p>
 
         <table class="simple">
@@ -566,7 +572,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardDescription</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#awardDescription</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -580,7 +586,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>awardDate</h3>
 
         <p>
-          The date on which the microcredential was awarded.
+          The date on which the micro-credential was awarded.
         </p>
 
         <table class="simple">
@@ -591,7 +597,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#awardDate</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#awardDate</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -605,7 +611,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>honours</h3>
 
         <p>
-          The honours associated with the microcredential award.
+          The honours associated with the micro-credential award.
         </p>
 
         <table class="simple">
@@ -616,7 +622,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#honours</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#honours</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -630,7 +636,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>studyArea</h3>
 
         <p>
-          The study area associated with the microcredential award.
+          The study area associated with the micro-credential award.
         </p>
 
         <table class="simple">
@@ -641,7 +647,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#studyArea</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#studyArea</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -655,7 +661,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>dateAwarded</h3>
 
         <p>
-          The date on which the microcredential was awarded.
+          The date on which the micro-credential was awarded.
         </p>
 
         <table class="simple">
@@ -666,7 +672,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#dateAwarded</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#dateAwarded</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -680,7 +686,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>dateIssued</h3>
 
         <p>
-          The date on which the microcredential was issued.
+          The date on which the micro-credential was issued.
         </p>
 
         <table class="simple">
@@ -691,7 +697,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#dateIssued</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#dateIssued</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -705,7 +711,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>educationalOrganization</h3>
 
         <p>
-          The educational organization that issued the microcredential.
+          The educational organization that issued the micro-credential.
         </p>
 
         <table class="simple">
@@ -716,7 +722,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#educationalOrganization</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#educationalOrganization</td>
             </tr>
             <tr>
               <td>Expected Value</td>
@@ -730,7 +736,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>name</h3>
 
         <p>
-          The name of the educational organization that issued the microcredential.
+          The name of the educational organization that issued the micro-credential.
         </p>
 
         <table class="simple">
@@ -755,7 +761,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>url</h3>
 
         <p>
-          The URL of the educational organization that issued the microcredential.
+          The URL of the educational organization that issued the micro-credential.
         </p>
 
         <table class="simple">
@@ -780,7 +786,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>identifier</h3>
 
         <p>
-          The identifier of the educational organization that issued the microcredential.
+          The identifier of the educational organization that issued the micro-credential.
         </p>
 
         <table class="simple">
@@ -805,7 +811,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         <h3>countryCode</h3>
 
         <p>
-          The country code of the educational organization that issued the microcredential.
+          The country code of the educational organization that issued the micro-credential.
         </p>
 
         <table class="simple">
@@ -816,7 +822,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
             </tr>
             <tr>
               <td>URL</td>
-              <td>https://academic-microcredential-vocab.mattrlabs.com/#countryCode</td>
+              <td>https://academic-micro-credential-vocab.mattrlabs.com/#countryCode</td>
             </tr>
             <tr>
               <td>Expected Value</td>
