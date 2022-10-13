@@ -140,20 +140,12 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         Verifiable Credentials related to an academic Micro-credential. 
         This vocabulary is intended to be used in conjunction with the Verifiable Credentials Data Model 1.0 [[?VC-DATA-MODEL]] specification.
       </p>
-      
-      <section class="informative">
-        <h3>Ecosystem Overview</h3>
-        <p>
-          This section covers the brief about the MyCreds<sup>TM</sup> ecosystem.
-        </p>
-      </section>  
 
       <section class="informative">
         <h3>Brief about Micro-credential award</h3>
         <p>
-          This section covers the overview of the micro-credential award. 
-          What it is?
-          What it contains? 
+          Micro-credential (i.e. MyCreds<sup>TM</sup>) provides learners and graduates access to a secure digital credentials for the 
+          academic records. A micro-credential contains the details about the academic certificate, the student name, program, the issuance date etc. 
         </p>
       </section>  
 
@@ -291,6 +283,10 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         Covers the negative test cases represented in JSON-LD.
         <ul>
           <li>Bad Signature</li>
+          <p>
+            Any tampering or modifications in the proof of credential will result in an invalid credentials. This gives an assurance in terms of credential authenticity and validity when processing credential information. 
+            In the example below, the credential proof information was modified which resulted in invalid credentials. 
+          </p>
 
           <pre class="example">
             {
@@ -376,6 +372,11 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           </pre>
 
           <li>Revoked Credential</li>
+          <p>
+            Revocation is a property of the credential which represent whether a credential is revocable or have an expiry date. Credentials are considered to be expired if the expiry date is met. 
+            The credential information is invalid and can't be used if the credentials are expired. 
+            In the example below, the <mark><b>credentialStatus</b></mark>section refers to the revocation status of the credential.
+          </p>
 
           <pre class="example">  
 
@@ -452,6 +453,10 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
       </pre>
           
           <li>Modified Information</li>  
+          <p>
+            If the credential claim or information is modified or tampered, the credential become invalid and can't be verified. 
+            In the below example, some information was modified in the <mark><b>claim</b></mark>section where the surname was changed from the original claim. This has resulted in an invalid credential as in the mediation process, the information was modified. 
+          </p>
           
           <pre class="example">
 
