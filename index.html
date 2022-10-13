@@ -137,13 +137,23 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
 
       <p>
         This specification describes a Linked Data vocabulary for asserting
-        Verifiable Credentials related to an academic Micro-credential . This vocabulary is intended to be used in conjunction with the Verifiable Credentials Data Model 1.0 [[?VC-DATA-MODEL]] specification.
+        Verifiable Credentials related to an academic Micro-credential. 
+        This vocabulary is intended to be used in conjunction with the Verifiable Credentials Data Model 1.0 [[?VC-DATA-MODEL]] specification.
       </p>
+      
       <section class="informative">
         <h3>Ecosystem Overview</h3>
-  
         <p>
           This section covers the brief about the MyCreds<sup>TM</sup> ecosystem.
+        </p>
+      </section>  
+
+      <section class="informative">
+        <h3>Brief about Micro-credential award</h3>
+        <p>
+          This section covers the overview of the micro-credential award. 
+          What it is?
+          What it contains? 
         </p>
       </section>  
 
@@ -245,7 +255,6 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         "proofPurpose": "assertionMethod",
         "verificationMethod": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN"
     }
-}
         </pre>
       </section>
     </section>
@@ -258,6 +267,121 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         data-oninclude="restrictReferences"
       ></div>
     </section>
+
+    <section class="informative">
+      <h2>Validation</h2>
+      <p>
+        This section will cover the validation scenarios, verification pattern.
+        Guidance around how a presentation or a credential can be verified e.g. 
+
+	      - Resolving the issuer DID? 
+
+	      - What did methods are supported, 
+          MyCreds<Sup>TM</Sup> support the <b>DID:Web</b> and <b>DID:Key</b> methods to generate and issue the micro-credentials.
+
+	      - What signature algorithm etc.
+            - Which signature scheme been used? 
+
+        - Revocation list 
+        It's more about the profile context rather a validation 
+      </p>
+
+      <h3>Test fixtures</h3>
+      <p>
+        Covers the negative test cases represented in JSON-LD.
+        <ul>
+          <li>Bad Signature</li>
+
+          <pre class="example">
+            {
+              "senderDidUrl": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6LSpwp8jy8d1W3maDApkV92RGp2YULKpetXDoNyQD6Foe6R",
+              "recipientDidUrls": [
+                  "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg"
+              ],
+              "payload": {
+                  "id": "c80cf529-1449-42b0-a972-ee975720859d",
+                  "type": "https://mattr.global/schemas/verifiable-credential/offer/Direct",
+                  "to": [
+                      "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg"
+                  ],
+                  "from": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
+                  "created_time": 1624509675690,
+                  "body": {
+                      "credentials": [
+                          {
+                  "type": [
+                      "VerifiableCredential",
+                      "AcademicAward",
+                      "VerifiableCredentialExtension"
+                  ],
+                  "issuer": {
+                      "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
+                      "name": "Sample University of Auckland"
+                  },
+                  "name": "Academic Award",
+                  "description": "An academic certificate",
+                  "issuanceDate": "2022-10-12T23:03:12.977Z",
+                  "credentialSubject": {
+                      "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
+                      "givenName": "John",
+                      "familyName": "Smith",
+                      "birthDate": "1988-01-01",
+                      "email": "John.Smith.1@gmail.com",
+                      "awardDetails": {
+                          "awardId": "MC_198211203_321109",
+                          "awardTitle": "Social Network Modelling",
+                          "awardType": "MICROCREDENTIAL",
+                          "awardDescription": "Social Network Modelling",
+                          "honours": "",
+                          "studyArea": "Computer Program Data Models",
+                          "dateAwarded": "2022-09-08",
+                          "dateIssued": "2022-09-08"
+                      },
+                      "educationalOrganization": {
+                          "name": "Sample University of Auckland",
+                          "url": "https://SUOA.nz/",
+                          "identifier": "SUOA12345",
+                          "countryCode": "NZ"
+                      }
+                  },
+                              "@context": [
+                                  "https://www.w3.org/2018/credentials/v1",
+                                  {
+                                      "@vocab": "https://w3id.org/security/undefinedTerm#"
+                                  },
+                                  "https://schema.org",
+                                  "https://mattr.global/contexts/vc-extensions/v1",
+                                  "https://w3id.org/vc-revocation-list-2020/v1"
+                              ],
+                              "credentialStatus": {
+                              "id": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339#0",
+                              "type": "RevocationList2020Status",
+                              "revocationListIndex": "0",
+                              "revocationListCredential": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339"
+                              },
+                              "proof": {
+                      "type": "Ed25519Signature2018",
+                      "created": "2022-10-12T23:03:13Z",
+                      "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0BiiqK2RAWFGXRv21lWGavTnuov60-JxQnBJAfL89MVYNRWWaYRahOkBN2qRzU7B5ldC3keonnUilbtS2Vi<mark>QaQ</mark>",
+                      "proofPurpose": "assertionMethod",
+                      "verificationMethod": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN"
+                          }
+                          }
+                      ],
+                      "domain": "https://staff-mattr-lhtdln.vii.mattr.global"
+                  }
+              }
+          }    
+
+          </pre>
+
+          <li>Revoked Credential</li>
+          
+          <li>Modified Information</li>  
+        </ul>
+      </p>
+
+    </section>  
 
     <section class="normative">
       <h2>The Academic Micro-credential Award Vocabulary</h2>
