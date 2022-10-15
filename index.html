@@ -169,7 +169,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         </p>
 
         <ul>
-          <li>Permanent Residency Card</li>
+          <li>Educational Qualification Award</li>
         </ul>
 
       Following roles are involved in this academic credential ecosystem.
@@ -190,63 +190,72 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         </p>
 
         <pre class="example">
-{
-    "@context": [
-        "https://www.w3.org/2018/credentials/v1",
-        {
-            "@vocab": "https://w3id.org/security/undefinedTerm#"
+          {
+            "type": [
+                "VerifiableCredential",
+                "AcademicAward",
+                "VerifiableCredentialExtension"
+            ],
+            "issuer": {
+                "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
+                "name": "Shamrock University Canada"
+            },
+            "name": "Academic Award",
+            "description": "An Academic Certificate",
+            "issuanceDate": "2022-10-15T05:54:40.968Z",
+            "credentialSubject": {
+                "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
+                "givenName": "John",
+                "familyName": "Smith",
+                "birthDate": "1988-01-01",
+                "email": "John.Smith.1@gmail.com",
+                "awardDetails": {
+                    "awardId": "MC_198211203_321109",
+                    "awardTitle": "Social Network Modelling",
+                    "awardType": "MICROCREDENTIAL",
+                    "awardDescription": "Social Network Modelling",
+                    "honours": "",
+                    "studyArea": "Computer Program Data Models",
+                    "dateAwarded": "2022-09-08",
+                    "dateIssued": "2022-09-08"
+                },
+                "educationalOrganization": {
+                    "name": "University of Regina",
+                    "url": "https://www.uregina.ca/",
+                    "identifier": "UOR12345",
+                    "countryCode": "CA"
+                }
+            },
+            "@context": [
+                "https://www.w3.org/2018/credentials/v1",
+                {
+                    "@vocab": "https://w3id.org/security/undefinedTerm#"
+                },
+                "https://schema.org",
+                "https://mattr.global/contexts/vc-extensions/v1",
+                "https://w3id.org/vc-revocation-list-2020/v1"
+            ],
+            "credentialStatus": {
+                "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+                "type": "RevocationList2020Status",
+                "revocationListIndex": "0",
+                "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+            },
+            "proof": {
+                "type": "Ed25519Signature2018",
+                "created": "2022-10-15T05:54:41Z",
+                "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
+                "proofPurpose": "assertionMethod",
+                "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
+            }
         },
-        "https://schema.org",
-        "https://mattr.global/contexts/vc-extensions/v1"
-    ],
-    "type": [
-        "VerifiableCredential",
-        "AcademicAward",
-        "VerifiableCredentialExtension"
-    ],
-    "issuer": {
-      "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
-      "name": "Sample University of Auckland"
-  },
-    "name": "Academic Award",
-    "description": "An academic certificate",
-    "issuanceDate": "2022-10-06T08:46:14.843Z",
-      "credentialSubject": {
-        "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
-        "givenName": "John",
-        "familyName": "Smith",
-        "birthDate": "1988-01-01",
-        "email": "John.Smith.1@gmail.com",
-        "awardDetails": {
-          "awardId": "MC_198211203_321109",
-          "awardTitle": "Social Network Modelling",
-          "awardType": "MICRO-CREDENTIAL",
-          "awardDescription": "Social Network Modelling",
-          "honours": "",
-          "studyArea": "Computer Program Data Models",
-          "dateAwarded": "2022-09-08",
-          "dateIssued": "2022-09-08"
-      },
-      "educationalOrganization": {
-          "name": "Sample University of Auckland",
-          "url": "https://SUOA.nz/",
-          "identifier": "SUOA12345",
-          "countryCode": "NZ"
-      }
-  },
-    "credentialStatus": {
-      "id": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/472b3f69-36ea-4444-b11f-18382459073f#1",
-      "type": "RevocationList2020Status",
-      "revocationListIndex": "1",
-      "revocationListCredential": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/472b3f69-36ea-4444-b11f-18382459073f"
-    },
-    "proof": {
-        "type": "Ed25519Signature2018",
-        "created": "2022-10-06T01:22:35Z",
-        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..I9EzNz9lrBPASSzcijYyAK4VBRvzJq62zEZkWHA0ixQpgPuEeEJedn4UcaEn8wFPTO3ZoiH-kGzMJoPiYBj3BQ",
-        "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN"
-    }
+        "credentialStatus": {
+            "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+            "type": "RevocationList2020Status",
+            "revocationListIndex": "0",
+            "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+        }
+
         </pre>
       </section>
     </section>
@@ -261,7 +270,6 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
     </section>
 
     <section class="informative">
-      <h2>Validation</h2>
       <p>
         This section will cover the validation scenarios, verification pattern.
         Guidance around how a presentation or a credential can be verified e.g. 
@@ -285,89 +293,75 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           <li>Bad Signature</li>
           <p>
             Any tampering or modifications in the proof of credential will result in an invalid credentials. This gives an assurance in terms of credential authenticity and validity when processing credential information. 
-            In the example below, the credential proof information was modified which resulted in invalid credentials. 
+            In the example below, the credential <mark>Proof</mark> information was modified which resulted in an invalid credentials. 
           </p>
 
           <pre class="example">
             {
-              "senderDidUrl": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6LSpwp8jy8d1W3maDApkV92RGp2YULKpetXDoNyQD6Foe6R",
-              "recipientDidUrls": [
-                  "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg"
-              ],
-              "payload": {
-                  "id": "c80cf529-1449-42b0-a972-ee975720859d",
-                  "type": "https://mattr.global/schemas/verifiable-credential/offer/Direct",
-                  "to": [
-                      "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg"
-                  ],
-                  "from": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
-                  "created_time": 1624509675690,
-                  "body": {
-                      "credentials": [
-                          {
-                  "type": [
-                      "VerifiableCredential",
-                      "AcademicAward",
-                      "VerifiableCredentialExtension"
-                  ],
-                  "issuer": {
-                      "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
-                      "name": "Sample University of Auckland"
-                  },
-                  "name": "Academic Award",
-                  "description": "An academic certificate",
-                  "issuanceDate": "2022-10-12T23:03:12.977Z",
-                  "credentialSubject": {
-                      "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
-                      "givenName": "John",
-                      "familyName": "Smith",
-                      "birthDate": "1988-01-01",
-                      "email": "John.Smith.1@gmail.com",
-                      "awardDetails": {
-                          "awardId": "MC_198211203_321109",
-                          "awardTitle": "Social Network Modelling",
-                          "awardType": "MICROCREDENTIAL",
-                          "awardDescription": "Social Network Modelling",
-                          "honours": "",
-                          "studyArea": "Computer Program Data Models",
-                          "dateAwarded": "2022-09-08",
-                          "dateIssued": "2022-09-08"
-                      },
-                      "educationalOrganization": {
-                          "name": "Sample University of Auckland",
-                          "url": "https://SUOA.nz/",
-                          "identifier": "SUOA12345",
-                          "countryCode": "NZ"
-                      }
-                  },
-                              "@context": [
-                                  "https://www.w3.org/2018/credentials/v1",
-                                  {
-                                      "@vocab": "https://w3id.org/security/undefinedTerm#"
-                                  },
-                                  "https://schema.org",
-                                  "https://mattr.global/contexts/vc-extensions/v1",
-                                  "https://w3id.org/vc-revocation-list-2020/v1"
-                              ],
-                              "credentialStatus": {
-                              "id": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339#0",
-                              "type": "RevocationList2020Status",
-                              "revocationListIndex": "0",
-                              "revocationListCredential": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339"
-                              },
-                              "proof": {
-                      "type": "Ed25519Signature2018",
-                      "created": "2022-10-12T23:03:13Z",
-                      <mark>"jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0BiiqK2RAWFGXRv21lWGavTnuov60-JxQnBJAfL89MVYNRWWaYRahOkBN2qRzU7B5ldC3keonnUilbtS2ViQaQ"</mark>>,
-                      "proofPurpose": "assertionMethod",
-                      "verificationMethod": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN"
-                          }
-                          }
-                      ],
-                      "domain": "https://staff-mattr-lhtdln.vii.mattr.global"
-                  }
-              }
-          }    
+        "type": [
+            "VerifiableCredential",
+            "AcademicAward",
+            "VerifiableCredentialExtension"
+        ],
+        "issuer": {
+            "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
+            "name": "Shamrock University Canada"
+        },
+        "name": "Academic Award",
+        "description": "An Academic Certificate",
+        "issuanceDate": "2022-10-15T05:54:40.968Z",
+        "credentialSubject": {
+            "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
+            "givenName": "John",
+            "familyName": "Smith",
+            "birthDate": "1988-01-01",
+            "email": "John.Smith.1@gmail.com",
+            "awardDetails": {
+                "awardId": "MC_198211203_321109",
+                "awardTitle": "Social Network Modelling",
+                "awardType": "MICROCREDENTIAL",
+                "awardDescription": "Social Network Modelling",
+                "honours": "",
+                "studyArea": "Computer Program Data Models",
+                "dateAwarded": "2022-09-08",
+                "dateIssued": "2022-09-08"
+            },
+            "educationalOrganization": {
+                "name": "University of Regina",
+                "url": "https://www.uregina.ca/",
+                "identifier": "UOR12345",
+                "countryCode": "CA"
+            }
+        },
+        "@context": [
+            "https://www.w3.org/2018/credentials/v1",
+            {
+                "@vocab": "https://w3id.org/security/undefinedTerm#"
+            },
+            "https://schema.org",
+            "https://mattr.global/contexts/vc-extensions/v1",
+            "https://w3id.org/vc-revocation-list-2020/v1"
+        ],
+        "credentialStatus": {
+            "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+            "type": "RevocationList2020Status",
+            "revocationListIndex": "0",
+            "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+        },
+        "proof": {
+            "type": "Ed25519Signature2018",
+            "created": "2022-10-15T05:54:41Z",
+            "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
+            "proofPurpose": "assertionMethod",
+            "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
+        }
+    },
+    "credentialStatus": {
+        "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+        "type": "RevocationList2020Status",
+        "revocationListIndex": "0",
+        "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+    }
 
           </pre>
 
@@ -380,75 +374,71 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
 
           <pre class="example">  
 
-          {
-            "id": "c3e44fe8-74cc-46d2-b6f2-ca94fca276bd",
-            "credential": {
-                "type": [
-                    "VerifiableCredential",
-                    "AcademicAward",
-                    "VerifiableCredentialExtension"
-                ],
-                "issuer": {
-                    "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
-                    "name": "Sample University of Auckland"
-                },
-                "name": "Academic Award",
-                "description": "An academic certificate",
-                "issuanceDate": "2022-10-12T23:03:12.977Z",
-                "credentialSubject": {
-                    "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
-                    "givenName": "John",
-                    "familyName": "Smith",
-                    "birthDate": "1988-01-01",
-                    "email": "John.Smith.1@gmail.com",
-                    "awardDetails": {
-                        "awardId": "MC_198211203_321109",
-                        "awardTitle": "Social Network Modelling",
-                        "awardType": "MICROCREDENTIAL",
-                        "awardDescription": "Social Network Modelling",
-                        "honours": "",
-                        "studyArea": "Computer Program Data Models",
-                        "dateAwarded": "2022-09-08",
-                        "dateIssued": "2022-09-08"
-                    },
-                    "educationalOrganization": {
-                        "name": "Sample University of Auckland",
-                        "url": "https://SUOA.nz/",
-                        "identifier": "SUOA12345",
-                        "countryCode": "NZ"
-                    }
-                },
-                "@context": [
-                    "https://www.w3.org/2018/credentials/v1",
-                    {
-                        "@vocab": "https://w3id.org/security/undefinedTerm#"
-                    },
-                    "https://schema.org",
-                    "https://mattr.global/contexts/vc-extensions/v1",
-                    "https://w3id.org/vc-revocation-list-2020/v1"
-                ],
-                "credentialStatus": {
-                    "id": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339#0",
-                    "type": "RevocationList2020Status",
-                    "revocationListIndex": "0",
-                    "revocationListCredential": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339"
-                },
-                "proof": {
-                    "type": "Ed25519Signature2018",
-                    "created": "2022-10-12T23:03:13Z",
-                    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0BiiqK2RAWFGXRv21lWGavTnuov60-JxQnBJAfL89MVYNRWWaYRahOkBN2qRzU7B5ldC3keonnUilbtS2ViQAQ",
-                    "proofPurpose": "assertionMethod",
-                    "verificationMethod": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN"
-                }
-            },
-            "credentialStatus": {
-                "id": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339#0",
-                "type": "RevocationList2020Status",
-                "revocationListIndex": "0",
-                "revocationListCredential": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339"
-            },
-            "issuanceDate": "2022-10-12T23:03:12.977Z"
-        }
+            {
+              "type": [
+                  "VerifiableCredential",
+                  "AcademicAward",
+                  "VerifiableCredentialExtension"
+              ],
+              "issuer": {
+                  "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
+                  "name": "Shamrock University Canada"
+              },
+              "name": "Academic Award",
+              "description": "An Academic Certificate",
+              "issuanceDate": "2022-10-15T05:54:40.968Z",
+              "credentialSubject": {
+                  "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
+                  "givenName": "John",
+                  "familyName": "Smith",
+                  "birthDate": "1988-01-01",
+                  "email": "John.Smith.1@gmail.com",
+                  "awardDetails": {
+                      "awardId": "MC_198211203_321109",
+                      "awardTitle": "Social Network Modelling",
+                      "awardType": "MICROCREDENTIAL",
+                      "awardDescription": "Social Network Modelling",
+                      "honours": "",
+                      "studyArea": "Computer Program Data Models",
+                      "dateAwarded": "2022-09-08",
+                      "dateIssued": "2022-09-08"
+                  },
+                  "educationalOrganization": {
+                      "name": "University of Regina",
+                      "url": "https://www.uregina.ca/",
+                      "identifier": "UOR12345",
+                      "countryCode": "CA"
+                  }
+              },
+              "@context": [
+                  "https://www.w3.org/2018/credentials/v1",
+                  {
+                      "@vocab": "https://w3id.org/security/undefinedTerm#"
+                  },
+                  "https://schema.org",
+                  "https://mattr.global/contexts/vc-extensions/v1",
+                  "https://w3id.org/vc-revocation-list-2020/v1"
+              ],
+              "credentialStatus": {
+                  "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+                  "type": "RevocationList2020Status",
+                  "revocationListIndex": "0",
+                  "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+              },
+              "proof": {
+                  "type": "Ed25519Signature2018",
+                  "created": "2022-10-15T05:54:41Z",
+                  "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
+                  "proofPurpose": "assertionMethod",
+                  "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
+              }
+          },
+          "credentialStatus": {
+              "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+              "type": "RevocationList2020Status",
+              "revocationListIndex": "0",
+              "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+          }
 
       </pre>
           
@@ -460,85 +450,71 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           
           <pre class="example">
 
-          {
-            "senderDidUrl": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6LSpwp8jy8d1W3maDApkV92RGp2YULKpetXDoNyQD6Foe6R",
-            "recipientDidUrls": [
-                "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg"
-            ],
-            "payload": {
-                "id": "c80cf529-1449-42b0-a972-ee975720859d",
-                "type": "https://mattr.global/schemas/verifiable-credential/offer/Direct",
-                "to": [
-                    "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg"
-                ],
-                "from": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
-                "created_time": 1624509675690,
-                "body": {
-                    "credentials": [
-                        {
-                "type": [
-                    "VerifiableCredential",
-                    "AcademicAward",
-                    "VerifiableCredentialExtension"
-                ],
-                "issuer": {
-                    "id": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN",
-                    "name": "Sample University of Auckland"
-                },
-                "name": "Academic Award",
-                "description": "An academic certificate",
-                "issuanceDate": "2022-10-12T23:03:12.977Z",
-                "credentialSubject": {
-                    "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
-                    "givenName": "John",
-                    "familyName": "Kelly",
-                    "birthDate": "1988-01-01",
-                    "email": "John.Smith.1@gmail.com",
-                    "awardDetails": {
-                        "awardId": "MC_198211203_321109",
-                        "awardTitle": "Social Network Modelling",
-                        "awardType": "MICROCREDENTIAL",
-                        "awardDescription": "Social Network Modelling",
-                        "honours": "",
-                        "studyArea": "Computer Program Data Models",
-                        "dateAwarded": "2022-09-08",
-                        "dateIssued": "2022-09-08"
-                    },
-                    "educationalOrganization": {
-                        "name": "Sample University of Auckland",
-                        "url": "https://SUOA.nz/",
-                        "identifier": "SUOA12345",
-                        "countryCode": "NZ"
-                    }
-                },
-                            "@context": [
-                                "https://www.w3.org/2018/credentials/v1",
-                                {
-                                    "@vocab": "https://w3id.org/security/undefinedTerm#"
-                                },
-                                "https://schema.org",
-                                "https://mattr.global/contexts/vc-extensions/v1",
-                                "https://w3id.org/vc-revocation-list-2020/v1"
-                            ],
-                            "credentialStatus": {
-                            "id": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339#0",
-                            "type": "RevocationList2020Status",
-                            "revocationListIndex": "0",
-                            "revocationListCredential": "https://staff-mattr-lhtdln.vii.mattr.global/core/v1/revocation-lists/fc8d5b60-d0d8-4cf9-b1d1-28862360f339"
-                            },
-                            "proof": {
-                    "type": "Ed25519Signature2018",
-                    "created": "2022-10-12T23:03:13Z",
-                    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0BiiqK2RAWFGXRv21lWGavTnuov60-JxQnBJAfL89MVYNRWWaYRahOkBN2qRzU7B5ldC3keonnUilbtS2ViQaQ",
-                    "proofPurpose": "assertionMethod",
-                    "verificationMethod": "did:key:z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN#z6MkgDiX1yQoDTWnZWqHRyXZVeKAaGTBfFYerwHdjNaJtKVN"
-                        }
-                        }
-                    ],
-                    "domain": "https://staff-mattr-lhtdln.vii.mattr.global"
-                }
-            }
-        }
+            {
+              "type": [
+                  "VerifiableCredential",
+                  "AcademicAward",
+                  "VerifiableCredentialExtension"
+              ],
+              "issuer": {
+                  "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
+                  "name": "Shamrock University Canada"
+              },
+              "name": "Academic Award",
+              "description": "An Academic Certificate",
+              "issuanceDate": "2022-10-15T05:54:40.968Z",
+              "credentialSubject": {
+                  "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
+                  "givenName": "John",
+                  "familyName": "Smith",
+                  "birthDate": "1988-01-01",
+                  "email": "John.Smith.1@gmail.com",
+                  "awardDetails": {
+                      "awardId": "MC_198211203_321109",
+                      "awardTitle": "Social Network Modelling",
+                      "awardType": "MICROCREDENTIAL",
+                      "awardDescription": "Social Network Modelling",
+                      "honours": "",
+                      "studyArea": "Computer Program Data Models",
+                      "dateAwarded": "2022-09-08",
+                      "dateIssued": "2022-09-08"
+                  },
+                  "educationalOrganization": {
+                      "name": "University of Regina",
+                      "url": "https://www.uregina.ca/",
+                      "identifier": "UOR12345",
+                      "countryCode": "CA"
+                  }
+              },
+              "@context": [
+                  "https://www.w3.org/2018/credentials/v1",
+                  {
+                      "@vocab": "https://w3id.org/security/undefinedTerm#"
+                  },
+                  "https://schema.org",
+                  "https://mattr.global/contexts/vc-extensions/v1",
+                  "https://w3id.org/vc-revocation-list-2020/v1"
+              ],
+              "credentialStatus": {
+                  "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+                  "type": "RevocationList2020Status",
+                  "revocationListIndex": "0",
+                  "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+              },
+              "proof": {
+                  "type": "Ed25519Signature2018",
+                  "created": "2022-10-15T05:54:41Z",
+                  "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
+                  "proofPurpose": "assertionMethod",
+                  "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
+              }
+          },
+          "credentialStatus": {
+              "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
+              "type": "RevocationList2020Status",
+              "revocationListIndex": "0",
+              "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
+          }
 
       </pre>
         </ul>
@@ -1136,7 +1112,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         </table>
       </section>
 
-    <section class="informative">
+    <!-- <section class="informative">
       <h2>Privacy Considerations</h2>
 
       <p>
@@ -1144,9 +1120,9 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         privacy implications of deploying this specification into production
         environments.
       </p>
-    </section>
+    </section> -->
 
-    <section class="informative">
+    <!-- <section class="informative">
       <h2>Security Considerations</h2>
 
       <p>
@@ -1163,9 +1139,9 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         implementing mission critical systems using the technology outlined in
         this specification.
       </p>
-    </section>
+    </section> -->
 
-    <section class="informative">
+    <!-- <section class="informative">
       <h2>Accessibility Considerations</h2>
 
       <p>
@@ -1184,9 +1160,9 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         This section details the general accessibility considerations to take
         into account when utilizing this data model.
       </p>
-    </section>
+    </section> -->
 
-    <section class="informative">
+    <!-- <section class="informative">
       <h2>Internationalization Considerations</h2>
 
       <p>
@@ -1203,6 +1179,6 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         This section outlines general internationalization considerations to
         take into account when utilizing this data model.
       </p>
-    </section>
+    </section> -->
   </body>
 </html>
