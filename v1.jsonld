@@ -1,0 +1,57 @@
+{
+  "@context": {
+    "@version": 1,
+    "@protected": true,
+    "AcademicAward": {
+      "@id": "https://academic-microcredential-vocab.mattrlabs.com#AcademicAward",
+      "@context": {
+        "@version": 1,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "academicaward": "https://academic-microcredential-vocab.mattrlabs.com#",
+        "schema": "http://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "givenName": "schema:givenName",
+        "familyName": "schema:familyName",
+        "birthDate": {
+          "@id": "schema:birthDate",
+          "@type": "xsd:dateTime"
+        },
+        "email": "schema:email",
+        "awardDetails": {
+          "@id": "academicaward:awardDetails",
+          "@context": {
+            "id": "@id",
+            "type": "@type",
+            "awardId": "academicaward:awardId",
+            "awardTitle": "academicaward:awardTitle",
+            "awardType": "academicaward:awardType",
+            "awardDescription": "academicaward:awardDescription",
+            "honours": "academicaward:honours",
+            "studyArea": "academicaward:studyArea",
+            "dateAwarded": {
+              "@id": "academicaward:dateAwarded",
+              "@type": "xsd:dateTime"
+            },
+            "dateIssued": {
+              "@id": "academicaward:dateIssued",
+              "@type": "xsd:dateTime"
+            }
+          }
+        },
+        "educationalOrganization": {
+          "@id": "schema:EducationalOrganization",
+          "@context": {
+            "id": "@id",
+            "type": "@type",
+            "name": "schema:name",
+            "url": "schema:url",
+            "identifier": "schema:identifier",
+            "countryCode": "schema:addressCountry"
+          }
+        }
+      }
+    }
+  }
+}
