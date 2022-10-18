@@ -2,3 +2,8 @@
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+[[redirects]]
+  from = "/v1"
+  to = "https://academic-microcredential-vocab.mattrlabs.com/v1.jsonld" 
+  status = 301
+  force = true
