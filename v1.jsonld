@@ -2,40 +2,32 @@
   "@context": {
     "@version": 1.1,
     "@protected": true,
-    "AcademicAward": {
-      "@id": "https://academic-microcredential-vocab.mattrlabs.com#AcademicAward",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "givenName": "http://schema.org/givenName",
-        "familyName": "http://schema.org/familyName",
-        "birthDate": {
-          "@id": "http://schema.org/birthDate",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-        },
-        "email": "http://schema.org/email",
-        "awardDetails": "https://academic-microcredential-vocab.mattrlabs.com#awardDetails",
-        "awardId": "https://academic-microcredential-vocab.mattrlabs.com#awardId",
-        "awardTitle": "https://academic-microcredential-vocab.mattrlabs.com#awardTitle",
-        "awardType": "https://academic-microcredential-vocab.mattrlabs.com#awardType",
-        "awardDescription": "https://academic-microcredential-vocab.mattrlabs.com#awardDescription",
-        "honours": "https://academic-microcredential-vocab.mattrlabs.com#honours",
-        "studyArea": "https://academic-microcredential-vocab.mattrlabs.com#studyArea",
-        "dateAwarded": {
-          "@id": "https://academic-microcredential-vocab.mattrlabs.com#dateAwarded",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-        },
-        "dateIssued": {
-          "@id": "https://academic-microcredential-vocab.mattrlabs.com#dateIssued",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-        },
-        "educationalOrganization": "http://schema.org/EducationalOrganization",
-        "url": "http://schema.org/url",
-        "identifier": "http://schema.org/identifier",
-        "countryCode": "http://schema.org/addressCountry"
-      }
-    }
+    "AcademicAward": "https://academic-microcredential-vocab.mattrlabs.com#AcademicAward",
+    "givenName": "http://schema.org/givenName",
+    "familyName": "http://schema.org/familyName",
+    "birthDate": {
+      "@id": "http://schema.org/birthDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "email": "http://schema.org/email",
+    "awardDetails": "https://academic-microcredential-vocab.mattrlabs.com#awardDetails",
+    "awardId": "https://academic-microcredential-vocab.mattrlabs.com#awardId",
+    "awardTitle": "https://academic-microcredential-vocab.mattrlabs.com#awardTitle",
+    "awardType": "https://academic-microcredential-vocab.mattrlabs.com#awardType",
+    "awardDescription": "https://academic-microcredential-vocab.mattrlabs.com#awardDescription",
+    "honours": "https://academic-microcredential-vocab.mattrlabs.com#honours",
+    "studyArea": "https://academic-microcredential-vocab.mattrlabs.com#studyArea",
+    "dateAwarded": {
+      "@id": "https://academic-microcredential-vocab.mattrlabs.com#dateAwarded",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "dateIssued": {
+      "@id": "https://academic-microcredential-vocab.mattrlabs.com#dateIssued",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "educationalOrganization": "http://schema.org/EducationalOrganization",
+    "url": "http://schema.org/url",
+    "identifier": "http://schema.org/identifier",
+    "countryCode": "http://schema.org/addressCountry"
   }
 }
