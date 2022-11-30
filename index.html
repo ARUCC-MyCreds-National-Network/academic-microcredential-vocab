@@ -190,96 +190,19 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         </p>
 
         <pre class="example">
-          {
-            "type": [
-                "VerifiableCredential",
-                "AcademicAward",
-                "VerifiableCredentialExtension"
-            ],
-            "issuer": {
-                "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
-                "name": "Shamrock University Canada"
-            },
-            "name": "Academic Award",
-            "description": "An Academic Certificate",
-            "issuanceDate": "2022-10-15T05:54:40.968Z",
-            "credentialSubject": {
-                "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
-                "givenName": "John",
-                "familyName": "Smith",
-                "birthDate": "1988-01-01",
-                "email": "John.Smith.1@gmail.com",
-                "awardDetails": {
-                    "awardId": "MC_198211203_321109",
-                    "awardTitle": "Social Network Modelling",
-                    "awardType": "MICROCREDENTIAL",
-                    "awardDescription": "Social Network Modelling",
-                    "honours": "",
-                    "studyArea": "Computer Program Data Models",
-                    "dateAwarded": "2022-09-08",
-                    "dateIssued": "2022-09-08"
-                },
-                "educationalOrganization": {
-                    "name": "University of Regina",
-                    "url": "https://www.uregina.ca/",
-                    "identifier": "UOR12345",
-                    "countryCode": "CA"
-                }
-            },
-            "@context": [
-                "https://www.w3.org/2018/credentials/v1",
-                {
-                    "@vocab": "https://w3id.org/security/undefinedTerm#"
-                },
-                "https://schema.org",
-                "https://mattr.global/contexts/vc-extensions/v1",
-                "https://w3id.org/vc-revocation-list-2020/v1"
-            ],
-            "credentialStatus": {
-                "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
-                "type": "RevocationList2020Status",
-                "revocationListIndex": "0",
-                "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
-            },
-            "proof": {
-                "type": "Ed25519Signature2018",
-                "created": "2022-10-15T05:54:41Z",
-                "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
-                "proofPurpose": "assertionMethod",
-                "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
-            }
-        }
-
-        </pre>
-      </section>
-    </section>
-
-      <h3>Test fixtures</h3>
-      <p>
-        This section covers the negative test cases represented in JSON-LD.
-        <ul>
-          <li>Bad Signature</li>
-          <p>
-            Any tampering or modifications in the proof of credential will result in an invalid credentials. This gives an assurance in terms of credential authenticity and validity when processing credential information. 
-            In the example below, the credential <mark><b>Proof</b></mark> information was modified which resulted in an invalid credentials. 
-          </p>
-
-          <pre class="example">
-            {
+    {
         "type": [
             "VerifiableCredential",
-            "AcademicAward",
-            "VerifiableCredentialExtension"
+            "AcademicAward"
         ],
         "issuer": {
-            "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
+            "id": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A",
             "name": "Shamrock University Canada"
         },
         "name": "Academic Award",
         "description": "An Academic Certificate",
         "issuanceDate": "2022-10-15T05:54:40.968Z",
         "credentialSubject": {
-            "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
             "givenName": "John",
             "familyName": "Smith",
             "birthDate": "1988-01-01",
@@ -295,7 +218,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
                 "dateIssued": "2022-09-08"
             },
             "educationalOrganization": {
-                "name": "University of Regina",
+                "organizationName": "University of Regina",
                 "url": "https://www.uregina.ca/",
                 "identifier": "UOR12345",
                 "countryCode": "CA"
@@ -303,168 +226,200 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
         },
         "@context": [
             "https://www.w3.org/2018/credentials/v1",
-            {
-                "@vocab": "https://w3id.org/security/undefinedTerm#"
-            },
-            "https://schema.org",
-            "https://mattr.global/contexts/vc-extensions/v1",
-            "https://w3id.org/vc-revocation-list-2020/v1"
+            "https://mattr.global/contexts/vc-extensions/v2",
+            "https://academic-microcredential-vocab.mattrlabs.com/v1"
         ],
-        "credentialStatus": {
-            "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
-            "type": "RevocationList2020Status",
-            "revocationListIndex": "0",
-            "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
-        },
         "proof": {
             "type": "Ed25519Signature2018",
-            "created": "2022-10-15T05:54:41Z",
-            "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
+            "created": "2022-11-30T02:05:18Z",
+            "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0F9HkXnlKaLmQ-qGsNxHNSZP4ZRI0r7fX-0xt3ZX5N0Kl7MubwuKT7Wb0c1wJRHwW5Q17vt9E3qzeJA-FSleDg",
             "proofPurpose": "assertionMethod",
-            "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
+            "verificationMethod": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A#z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A"
+        }
+    }
+        </pre>
+      </section>
+    </section>
+
+      <h3>Test fixtures</h3>
+      <p>
+        This section covers the negative test cases represented in JSON-LD.
+        <ul>
+          <li>Bad Signature</li>
+          <p>
+            Any tampering or modifications in the proof of credential will result in an invalid credentials. This gives an assurance in terms of credential authenticity and validity when processing credential information. 
+            In the example below, the credential <mark><b>Proof</b></mark> information was modified which will fail verification due to the signature not being valid. 
+          </p>
+
+          <pre class="example">
+    {
+        "type": [
+            "VerifiableCredential",
+            "AcademicAward"
+        ],
+        "issuer": {
+            "id": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A",
+            "name": "Shamrock University Canada"
+        },
+        "name": "Academic Award",
+        "description": "An Academic Certificate",
+        "issuanceDate": "2022-10-15T05:54:40.968Z",
+        "credentialSubject": {
+            "givenName": "John",
+            "familyName": "Smith",
+            "birthDate": "1988-01-01",
+            "email": "John.Smith.1@gmail.com",
+            "awardDetails": {
+                "awardId": "MC_198211203_321109",
+                "awardTitle": "Social Network Modelling",
+                "awardType": "MICROCREDENTIAL",
+                "awardDescription": "Social Network Modelling",
+                "honours": "",
+                "studyArea": "Computer Program Data Models",
+                "dateAwarded": "2022-09-08",
+                "dateIssued": "2022-09-08"
+            },
+            "educationalOrganization": {
+                "organizationName": "University of Regina",
+                "url": "https://www.uregina.ca/",
+                "identifier": "UOR12345",
+                "countryCode": "CA"
+            }
+        },
+        "@context": [
+            "https://www.w3.org/2018/credentials/v1",
+            "https://mattr.global/contexts/vc-extensions/v2",
+            "https://academic-microcredential-vocab.mattrlabs.com/v1"
+        ],
+        "proof": {
+            "type": "Ed25519Signature2018",
+            "created": "2022-11-30T02:05:18Z",
+            "jws": "eyJhbiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0F9HkXnlKaLmQ-qGsNxNSZP4ZRI0r7fX-0xt3ZX5N0Kl7MubwuKT7Wb0c1wJRHwW5Q17vt9E3qzeJA-FSleDg",
+            "proofPurpose": "assertionMethod",
+            "verificationMethod": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A#z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A"
         }
     }
           </pre>
 
           <li>Revoked Credential</li>
           <p>
-            Revocation is a property of the credential which represent whether a credential is revocable or have an expiry date. Credentials are considered to be expired if the expiry date is met. 
-            The credential information is invalid and can't be used if the credentials are expired. 
-            In the example below, the <mark><b>credentialStatus</b></mark> section refers to the revocation status of the credential.
+            A credential can be made revocable by adding the <mark><b>revocationListCredential</b></mark> property inside the <mark><b>credentialStatus</b></mark> object.
+            It is the responsibility of the issuer to maintain the revocation list and update it when a credential is revoked. Details about RevocationList2020Status can be found <a href="https://w3c-ccg.github.io/vc-status-rl-2020/">here</a>.
+          </p>
+          <p>
+            In the example below, issuer has updated the revocation list and revoked the credential. When the credential is verified, it will pass its signature verification but will fail the revocation check.
           </p>
 
           <pre class="example">  
-
-            {
-              "type": [
-                  "VerifiableCredential",
-                  "AcademicAward",
-                  "VerifiableCredentialExtension"
-              ],
-              "issuer": {
-                  "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
-                  "name": "Shamrock University Canada"
-              },
-              "name": "Academic Award",
-              "description": "An Academic Certificate",
-              "issuanceDate": "2022-10-15T05:54:40.968Z",
-              "credentialSubject": {
-                  "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
-                  "givenName": "John",
-                  "familyName": "Smith",
-                  "birthDate": "1988-01-01",
-                  "email": "John.Smith.1@gmail.com",
-                  "awardDetails": {
-                      "awardId": "MC_198211203_321109",
-                      "awardTitle": "Social Network Modelling",
-                      "awardType": "MICROCREDENTIAL",
-                      "awardDescription": "Social Network Modelling",
-                      "honours": "",
-                      "studyArea": "Computer Program Data Models",
-                      "dateAwarded": "2022-09-08",
-                      "dateIssued": "2022-09-08"
-                  },
-                  "educationalOrganization": {
-                      "name": "University of Regina",
-                      "url": "https://www.uregina.ca/",
-                      "identifier": "UOR12345",
-                      "countryCode": "CA"
-                  }
-              },
-              "@context": [
-                  "https://www.w3.org/2018/credentials/v1",
-                  {
-                      "@vocab": "https://w3id.org/security/undefinedTerm#"
-                  },
-                  "https://schema.org",
-                  "https://mattr.global/contexts/vc-extensions/v1",
-                  "https://w3id.org/vc-revocation-list-2020/v1"
-              ],
-              "credentialStatus": {
-                  "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
-                  "type": "RevocationList2020Status",
-                  "revocationListIndex": "0",
-                  "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
-              },
-              "proof": {
-                  "type": "Ed25519Signature2018",
-                  "created": "2022-10-15T05:54:41Z",
-                  "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
-                  "proofPurpose": "assertionMethod",
-                  "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
-              }
-          }
-
+    {
+        "type": [
+            "VerifiableCredential",
+            "AcademicAward"
+        ],
+        "issuer": {
+            "id": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A",
+            "name": "Shamrock University Canada"
+        },
+        "name": "Academic Award",
+        "description": "An Academic Certificate",
+        "issuanceDate": "2022-10-15T05:54:40.968Z",
+        "credentialSubject": {
+            "givenName": "John",
+            "familyName": "Smith",
+            "birthDate": "1988-01-01",
+            "email": "John.Smith.1@gmail.com",
+            "awardDetails": {
+                "awardId": "MC_198211203_321109",
+                "awardTitle": "Social Network Modelling",
+                "awardType": "MICROCREDENTIAL",
+                "awardDescription": "Social Network Modelling",
+                "honours": "",
+                "studyArea": "Computer Program Data Models",
+                "dateAwarded": "2022-09-08",
+                "dateIssued": "2022-09-08"
+            },
+            "educationalOrganization": {
+                "organizationName": "University of Regina",
+                "url": "https://www.uregina.ca/",
+                "identifier": "UOR12345",
+                "countryCode": "CA"
+            }
+        },
+        "credentialStatus": {
+            "id": "https://demo.vii.mattr.global/core/v1/revocation-lists/e309d8c1-7d18-4056-8926-1f090205af4b#0",
+            "type": "RevocationList2020Status",
+            "revocationListIndex": "0",
+            "revocationListCredential": "https://demo.vii.mattr.global/core/v1/revocation-lists/e309d8c1-7d18-4056-8926-1f090205af4b"
+        },
+        "@context": [
+            "https://www.w3.org/2018/credentials/v1",
+            "https://mattr.global/contexts/vc-extensions/v2",
+            "https://academic-microcredential-vocab.mattrlabs.com/v1"
+        ],
+        "proof": {
+            "type": "Ed25519Signature2018",
+            "created": "2022-11-30T02:14:40Z",
+            "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TJ9RnbAHnROhXoHc--ToDZkVhMq2S-3I95aT5d-G9PhRLmSh0EfY3v9XIsQAFdLaMjLZWJf96KCt47AmzLNsBw",
+            "proofPurpose": "assertionMethod",
+            "verificationMethod": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A#z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A"
+        }
+    }
       </pre>
           
           <li>Modified Information</li>  
           <p>
             If the credential claim or information is modified or tampered, the credential become invalid and can't be verified. 
-            In the below example, some information was modified in the <mark><b>claim</b></mark> section where the surname was changed from the original claim. This has resulted in an invalid credential as in the mediation process, the information was modified. 
+            In the below example, the givenName value was modified in the <mark><b>credential subject</b></mark> section. This will result in an invalid credential during verification.
           </p>
           
           <pre class="example">
-
-            {
-              "type": [
-                  "VerifiableCredential",
-                  "AcademicAward",
-                  "VerifiableCredentialExtension"
-              ],
-              "issuer": {
-                  "id": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm",
-                  "name": "Shamrock University Canada"
-              },
-              "name": "Academic Award",
-              "description": "An Academic Certificate",
-              "issuanceDate": "2022-10-15T05:54:40.968Z",
-              "credentialSubject": {
-                  "id": "did:key:z6MkrDEHzifkMbpTuC8ifNDCUr8XhfeUz4oHF3ZwK8x4DSLg",
-                  "givenName": "John",
-                  "familyName": "Smith",
-                  "birthDate": "1988-01-01",
-                  "email": "John.Smith.1@gmail.com",
-                  "awardDetails": {
-                      "awardId": "MC_198211203_321109",
-                      "awardTitle": "Social Network Modelling",
-                      "awardType": "MICROCREDENTIAL",
-                      "awardDescription": "Social Network Modelling",
-                      "honours": "",
-                      "studyArea": "Computer Program Data Models",
-                      "dateAwarded": "2022-09-08",
-                      "dateIssued": "2022-09-08"
-                  },
-                  "educationalOrganization": {
-                      "name": "University of Regina",
-                      "url": "https://www.uregina.ca/",
-                      "identifier": "UOR12345",
-                      "countryCode": "CA"
-                  }
-              },
-              "@context": [
-                  "https://www.w3.org/2018/credentials/v1",
-                  {
-                      "@vocab": "https://w3id.org/security/undefinedTerm#"
-                  },
-                  "https://schema.org",
-                  "https://mattr.global/contexts/vc-extensions/v1",
-                  "https://w3id.org/vc-revocation-list-2020/v1"
-              ],
-              "credentialStatus": {
-                  "id": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107#0",
-                  "type": "RevocationList2020Status",
-                  "revocationListIndex": "0",
-                  "revocationListCredential": "https://arucc-issuer-demo.vii.ca01.mattr.global/core/v1/revocation-lists/cd969503-ee36-414c-9915-b810372e8107"
-              },
-              "proof": {
-                  "type": "Ed25519Signature2018",
-                  "created": "2022-10-15T05:54:41Z",
-                  "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..F86ncbWmGycPnVVgSGTzw9qBV-2xHZrwd-YqRLScpG3ZdveM28GP80XSNL6a_fSfqPoRYr2DZa7PUC95DgkCAA",
-                  "proofPurpose": "assertionMethod",
-                  "verificationMethod": "did:key:z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm#z6MkopFH61qJZ5mehRmK1ndG9rJwLjqwYkMCnHzwhCXHngUm"
-              }
-          }
-          
+    {
+        "type": [
+            "VerifiableCredential",
+            "AcademicAward"
+        ],
+        "issuer": {
+            "id": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A",
+            "name": "Shamrock University Canada"
+        },
+        "name": "Academic Award",
+        "description": "An Academic Certificate",
+        "issuanceDate": "2022-10-15T05:54:40.968Z",
+        "credentialSubject": {
+            "givenName": "Not John",
+            "familyName": "Smith",
+            "birthDate": "1988-01-01",
+            "email": "John.Smith.1@gmail.com",
+            "awardDetails": {
+                "awardId": "MC_198211203_321109",
+                "awardTitle": "Social Network Modelling",
+                "awardType": "MICROCREDENTIAL",
+                "awardDescription": "Social Network Modelling",
+                "honours": "",
+                "studyArea": "Computer Program Data Models",
+                "dateAwarded": "2022-09-08",
+                "dateIssued": "2022-09-08"
+            },
+            "educationalOrganization": {
+                "organizationName": "University of Regina",
+                "url": "https://www.uregina.ca/",
+                "identifier": "UOR12345",
+                "countryCode": "CA"
+            }
+        },
+        "@context": [
+            "https://www.w3.org/2018/credentials/v1",
+            "https://mattr.global/contexts/vc-extensions/v2",
+            "https://academic-microcredential-vocab.mattrlabs.com/v1"
+        ],
+        "proof": {
+            "type": "Ed25519Signature2018",
+            "created": "2022-11-30T02:05:18Z",
+            "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0F9HkXnlKaLmQ-qGsNxHNSZP4ZRI0r7fX-0xt3ZX5N0Kl7MubwuKT7Wb0c1wJRHwW5Q17vt9E3qzeJA-FSleDg",
+            "proofPurpose": "assertionMethod",
+            "verificationMethod": "did:key:z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A#z6Mkh21rKtkbgdjYHHFdaCiJHp7R6rvXL3G7B3JGfHvCBg6A"
+        }
+    }
       </pre>
         </ul>
       </p>
@@ -987,7 +942,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
       </section>
 
       <section class="informative">
-        <h3>name</h3>
+        <h3>organizationName</h3>
 
         <p>
           The name of the educational organization that issued the micro-credential.
@@ -997,7 +952,7 @@ directly on <a href="https://github.com/ARUCC-MyCreds-National-Network/academic-
           <tbody>
             <tr>
               <td>Term</td>
-              <td>name</td>
+              <td>organizationName</td>
             </tr>
             <tr>
               <td>URL</td>
