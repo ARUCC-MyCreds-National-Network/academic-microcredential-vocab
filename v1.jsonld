@@ -15,8 +15,7 @@
     "awardTitle": "https://academic-microcredential-vocab.mattrlabs.com#awardTitle",
     "awardType": "https://academic-microcredential-vocab.mattrlabs.com#awardType",
     "awardDescription": "https://academic-microcredential-vocab.mattrlabs.com#awardDescription",
-    "honours": "https://academic-microcredential-vocab.mattrlabs.com#honours",
-    "studyArea": "https://academic-microcredential-vocab.mattrlabs.com#studyArea",
+    "honors": "https://academic-microcredential-vocab.mattrlabs.com#honors",
     "dateAwarded": {
       "@id": "https://academic-microcredential-vocab.mattrlabs.com#dateAwarded",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
