@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     { 
       "source": "/v1",
-      "destination": "/v1.jsonld", 
-      "permanent": true
+      "destination": "/v1.jsonld",
     }
   ]
 }
